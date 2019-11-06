@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "106604255962",
+    "firebase_url": "https://pet-adoption-92139.firebaseio.com",
+    "project_id": "pet-adoption-92139",
+    "storage_bucket": "pet-adoption-92139.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:106604255962:android:1e18783b5b220a74afa3e3",
+        "android_client_info": {
+          "package_name": "jorgecastilloprz.github.io.getapet"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "106604255962-gjc4bmjr5t1p9jivoaq4t83opfs5ncqb.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "jorgecastilloprz.github.io.getapet",
+            "certificate_hash": "5ad7bde42e9ed6a03aecfe5d9d6903f0e7dad6ac"
+          }
+        },
+        {
+          "client_id": "106604255962-oih93ojl06ptg7ec8ca75bofbgkotjet.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBP5KFdpAmc9pGc6MTFxxoPnbqdl3UqHbE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "106604255962-oih93ojl06ptg7ec8ca75bofbgkotjet.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
