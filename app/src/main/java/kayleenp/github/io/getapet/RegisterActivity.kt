@@ -3,6 +3,7 @@ package kayleenp.github.io.getapet
 import android.content.Intent
 import android.os.Bundle
 import android.util.Patterns
+import android.view.View
 import androidx.appcompat.app.AppCompatActivity
 import com.google.firebase.FirebaseApiNotAvailableException
 import com.google.firebase.auth.FirebaseAuth
@@ -50,12 +51,13 @@ class RegisterActivity : AppCompatActivity() {
     }
 
     private fun registerUser(email: String, password: String) {
-
+        progressbar.visibility = View.VISIBLE
         mAuth.createUserWithEmailAndPassword(email, password)
             .addOnCompleteListener(this){task ->
+                progressbar.visibility = View.GONE
                 if(task.isSuccessful){
 
-                    val intent = Intent(this@RegisterActivity, MainActivity::class.java).apply {
+                    val intent = Intent(this@RegisterActivity, LoginActivity::class.java).apply {
                         flags = Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK
                     }
 
@@ -69,5 +71,4 @@ class RegisterActivity : AppCompatActivity() {
                 }
 
             }
-
-    }
+}
