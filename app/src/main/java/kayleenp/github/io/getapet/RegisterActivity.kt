@@ -2,11 +2,13 @@ package kayleenp.github.io.getapet
 
 import android.content.Intent
 import android.os.Bundle
+import android.util.Log
 import android.util.Patterns
 import android.view.View
 import androidx.appcompat.app.AppCompatActivity
 import com.google.firebase.FirebaseApiNotAvailableException
 import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.auth.FirebaseUser
 import kotlinx.android.synthetic.main.activity_register.*
 
 class RegisterActivity : AppCompatActivity() {
@@ -56,6 +58,16 @@ class RegisterActivity : AppCompatActivity() {
             .addOnCompleteListener(this){task ->
                 progressbar.visibility = View.GONE
                 if(task.isSuccessful){
+                    val auth = FirebaseAuth.getInstance()
+                    val user = auth.currentUser
+                    val TAG = "MyMessage"
+
+                    user?.sendEmailVerification()
+                        ?.addOnCompleteListener { task ->
+                            if (task.isSuccessful) {
+                                Log.d(TAG, "Verification Email sent.")
+                            }
+                        }
 
                     val intent = Intent(this@RegisterActivity, LoginActivity::class.java).apply {
                         flags = Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK
@@ -71,4 +83,5 @@ class RegisterActivity : AppCompatActivity() {
                 }
 
             }
+
 }
