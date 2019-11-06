@@ -1,10 +1,12 @@
 package kayleenp.github.io.getapet
 
+import android.content.Context
 import android.content.Intent
 import android.os.Bundle
 import android.util.Log
 import android.util.Patterns
 import android.view.View
+import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.google.firebase.FirebaseApiNotAvailableException
 import com.google.firebase.auth.FirebaseAuth
@@ -60,12 +62,11 @@ class RegisterActivity : AppCompatActivity() {
                 if(task.isSuccessful){
                     val auth = FirebaseAuth.getInstance()
                     val user = auth.currentUser
-                    val TAG = "MyMessage"
 
                     user?.sendEmailVerification()
                         ?.addOnCompleteListener { task ->
                             if (task.isSuccessful) {
-                                Log.d(TAG, "Verification Email sent.")
+                                Toast.makeText(this, "Registration Successfull. Please Check Your Email", Toast.LENGTH_LONG).show()
                             }
                         }
 
